@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "looking-buy",
+  "private_key_id": "3306d7786df49dd498a4aaddb5e066f74bb4d777",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDQLyPEDJ3zmdUZ\n5pp9gs7yntmjyWtXdKlzEgLJ37I1uaB4x4nenDrzkEw1gDdJMT0AtXyAlrW/2eH8\ny+UXph5UwlTh5GiCvZkqhg75tt3azFMBoD1hnrs8s+GO9ti2w6RVzLIjkL3KqzHN\nU3cq9xs/IuGs+SJsjd81JC0IGEg2ZqHESsjK0Drr6ndBeEH40HlbLeHTqukpKxab\nvS/B39uwnUnzTX1t+EOgydYF3qovQ08aXZpFOb7JY0iGH2fy3uT9SrmF4MTL38B9\nhnafpHFn4SnsSzkqyKZMdOJPc+4HpXmJNqwBQWj3o/Fy9vCvwkrNMULm7tRcKH+0\njigQjTlbAgMBAAECggEAAQymqbQh8C3SN4oMFluPhsdoX0omRpJNnfdRUQA8RZ5r\nKrSJCHYJ3oQzvDklWv+ya/H5IyIVHQT8CAuYMdeQP6hpCnzdqnte6KU06bf5vriR\nMW4QrKphkoXDNVqFwQ9gnBeNTTX0VV2k6lgC7QLMrBTX2iTsotGcGjuOAuCODt9+\n1oKgz5domuFiSL17YZLOw7B2w5n1DqFwEDvbCg/335uhf1hSfl3IACfiT62w6C1X\nyxkP3zB68jtSURk9WIrNcft0UD/kvAEExUoBcgphRIOXVmBfQDbSlI1pdsP9B4Ec\nPnCIsh26AETdxnSt+9DbMh72gjjnNhSDtXqmFxPbCQKBgQD2Pni3Fb0vrxSbPNAz\ntPKeoL1j2KM9U4x6LZD9HSVTCDR9l32AJwsf41E/hqfdebw94+Mada1kZsh0cxS+\nuJliOQn9h4ECC+1p8+2XyaniR2U55TKk+KXkpwGXsD5y6jIpM5IK2LfRCA1JDh0r\nYOchPcB4yEJSboAjTlgJRwk7LwKBgQDYbqVfDzJyM3O4lgZ4Urj8WKeQADyBgK16\nfulX/uwti++NJP7TfLWOug7OkVBx7fbs6k7pIMPi/i+HCFHTVb5QWN2oStZF0gXi\nrqAU07JA4YQE0gnFvSj9tLTl/mO7TITV/8zKAP/oxzW6fokGe04eixIyP50rVkwf\nto5cL7DplQKBgDy29I639niuY5dPLErDf9rq6SeYP8+cLRPm7kvqhsxtRnv9AT26\n4rxPETZnnjY2kNp1uQZKI6GQ0jYcNe48l90nETaI1Z9Kj5RDR77YQ2H+lo/q2kzg\n3g59ux/Knes5oXqVM5onC1On95aeu0R51SNWFYHyZp/qjP+njn9jG3yTAoGBANgr\nAw8Dzb3UeANoDMRG0y5vmcSxB73M+Pf9JDDYk6oWN0gBKGexCmGoobtd1jxEkjkk\n+XXNXPkuKegzvg5XeIMljxZU0NjhoTE8evTyT/qPg92Qr2QJv5RO1dNVluTu00ou\neKtV/kPQHHDNiyynIWpOOvlnIiKzycpu+pdGputVAoGBAIVX7F5/6cDMidkI5Vhh\nHxqmcPmr9mxptZSCCRm0bj2XIHE3h/6dEP2b4K8fouc/E9Os5TIK+rxbwUpmbLMS\nsNxc6bZeJ5DRwohGLKrqBhHx10fWwQd+i4ZUNy0UfEDvrqGtmPARVCS5yNIpba5v\nx7Lnh95ylMYHqZ443um1USc2\n-----END PRIVATE KEY-----\n",
+  "client_email": "looking-buy@looking-buy.iam.gserviceaccount.com",
+  "client_id": "102072577566704901617",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/looking-buy%40looking-buy.iam.gserviceaccount.com"
+}
