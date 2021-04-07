@@ -1,1 +1,1 @@
-# Programa para leitura de Cupom fiscais de supermercados com Google Vision
+#Aplicação criada para fazer a leitura de cupom fiscais de supermercado

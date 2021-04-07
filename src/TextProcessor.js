@@ -11,8 +11,10 @@ class TextProcessor {
     const data = this._content.split('&').filter(line => line)
 
     this._content = data.map(line => {
-      const productInfo = line.trim().match(/(?<=^\d{3}\s)\d+(\s[a-zA-Z]+)+/gm)
-      const priceInfo = line.trim().match(/\d+[.,]\d{2}$/gm)
+      const regexToGetCodAndName = /(?<=^\d{3}\s)\d+(\s[a-zA-Z]+)+/gm
+      const regexToGetPrice = /\d+[.,]\d{2}$/gm
+      const productInfo = line.trim().match(regexToGetCodAndName)
+      const priceInfo = line.trim().match(regexToGetPrice)
       return [productInfo.join(''), priceInfo.join('')]
     })
 
