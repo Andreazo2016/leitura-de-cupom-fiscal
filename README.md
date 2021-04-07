@@ -1,1 +1,1 @@
-# Programa para leitura de notas fiscais com Google Vision
+#Aplicação criada para fazer a leitura de cupom fiscais de supermercado
