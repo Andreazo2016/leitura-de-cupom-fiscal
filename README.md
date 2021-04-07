@@ -1,0 +1,1 @@
+# Programa para leitura de notas fiscais com Google Vision
