@@ -7,7 +7,7 @@ class ProductProcessor {
     this._content = content
   }
 
-  getProductsFromImage() {
+  getProducts() {
 
     return new TextProcessor(this._content)
       .unifiedInColumns()
