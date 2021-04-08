@@ -1,15 +1,15 @@
 class Product {
-  _cod
+  _code
   _name
   _price
-  _qtd
+  _quantity
   _unit
 
-  constructor([cod, name, price, qtd, unit]) {
+  constructor([code, name, price, quantity, unit]) {
     this._price = price.replace(',', '.')
-    this._cod = cod
+    this._code = code
     this._name = name
-    this._qtd = qtd
+    this._quantity = quantity
     this._unit = unit
   }
 
@@ -17,15 +17,15 @@ class Product {
     return this._price
   }
 
-  get cod() {
-    return this._cod
+  get code() {
+    return this._code
   }
 
   get name() {
     return this._name
   }
-  get qtd() {
-    return this._qtd
+  get quantity() {
+    return this._quantity
   }
   get unit() {
     return this._unit
