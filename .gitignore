@@ -2,3 +2,4 @@ node_modules
 tmp/*
 imgs/*
 google_ocr_key.json
+database_models.txt
