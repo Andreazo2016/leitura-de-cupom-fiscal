@@ -1,64 +1,39 @@
 const path = require('path')
-import readLine from 'readline'
-import Chalk from 'chalk'
-import ChalkTable from 'chalk-table'
-import DraftLog from 'draftlog'
+import TerminalController from './controller/TerminalController'
+
+const terminalController = new TerminalController()
+
+terminalController.initTerminal()
 
 import CupomService from './service/CupomService'
 
 const cupomService = new CupomService(path.resolve(__dirname, '..', 'tmp'))
 
 
-const configureTableTerminal = (options, structure) => {
-  const tableConfig = ChalkTable(options, structure)
-  return tableConfig
-}
-
-const genericOptionsConfig = (arrayObject = []) => {
-
-  const columns = arrayObject.map(object => ({
-    field: object.field, name: Chalk[object['color'] || 'cyan'](object.name)
-  }))
-
-  return {
-    leftPad: 2,
-    columns
-  }
-}
-
-let terminal = {}
 
 const OPTIONS = {
-  1: 'UPLOAD_CUPONS',
+  1: 'LIST_CUPONS',
   0: 'ENCERRAR',
 }
 
 const COMANDS = [
-  { descricao: 'UPLOAD CUPONS', action: 1 },
+  { descricao: 'LIST CUPONS', action: 1 },
   { descricao: 'PARAR', action: 0 }
 ]
 
-
-const showInTerminal = (options = [], data = {}) => {
-  const table = configureTableTerminal(genericOptionsConfig(options, leftPad), data)
-  console.draft(table)
-}
-
-const questions = (msg = '') => {
-  return new Promise(resolve => terminal.question(msg, resolve))
-}
-
 const actions = {
 
-  'ENCERRAR': async () => { terminal.close() },
-  'UPLOAD_CUPONS': async () => {
+  'ENCERRAR': async () => { terminalController.close() },
+
+  'LIST_CUPONS': async () => {
+
     const files = await cupomService.getcuponsFromDirectory()
 
     const data = files.map(filename => ({
       filename
     }))
 
-    showInTerminal([
+    terminalController.showInTerminal([
       {
         field: 'filename',
         name: 'Filename'
@@ -72,8 +47,7 @@ async function mainLoop() {
 
   try {
 
-    const answer = await questions('O que deseja fazer?')
-    console.log('answer', answer)
+    const answer = await terminalController.questions('O que deseja fazer?')
 
     const step = parseInt(answer)
 
@@ -103,17 +77,11 @@ async function mainLoop() {
 
 ;
 (async () => {
-
-  DraftLog(console).addLineListener(process.stdin)
-  terminal = readLine.createInterface({
-    input: process.stdin,
-    output: process.stdout
-  })
-
-  showInTerminal([
+  terminalController.showInTerminal([
     { field: 'descricao', name: "Descrição", color: 'red' },
     { field: 'action', name: "Digite", color: 'green' },
   ], COMANDS)
+
 
   await mainLoop()
 
