@@ -8,6 +8,9 @@
   },
   "dependencies": {
     "@google-cloud/vision": "^2.3.1",
+    "chalk": "^4.1.0",
+    "chalk-table": "^1.0.2",
+    "draftlog": "^1.0.13",
     "express": "^4.17.1",
     "multer": "^1.4.2",
     "pg": "^8.5.1",
