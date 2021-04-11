@@ -1,5 +1,6 @@
 const path = require('path')
 import TerminalController from './controller/TerminalController'
+import './database'
 
 const terminalController = new TerminalController()
 
