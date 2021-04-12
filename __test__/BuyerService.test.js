@@ -1,5 +1,3 @@
-// import rewiremock from 'rewiremock/babel'
-
 const BuyerService = require('../src/service/BuyerService')
 const BuyerRepositoryMock = require('./BuyerRepositoryMock')
 const BuyerModelMock = require('./BuyerModelMock')
@@ -81,5 +79,11 @@ describe('BuyerService', () => {
 
     expect(buyerCreated.name).toBe(name)
 
+  })
+
+  it('Should be throw an erro if name is not provided', () => {
+    const { buyerService } = sut()
+    const promise = buyerService.save({})
+    expect(promise).rejects.toThrow()
   })
 })

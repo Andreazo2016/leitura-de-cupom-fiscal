@@ -6,6 +6,7 @@ class BuyerService {
   }
 
   async save({ name }) {
+    if (!name) throw new Error('Missing param')
     const buyer = await this._buyerRepository.save({ name })
     return buyer
   }
