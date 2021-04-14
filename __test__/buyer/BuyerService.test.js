@@ -1,6 +1,8 @@
-const BuyerService = require('../src/service/BuyerService')
+const BuyerService = require('../../src/service/BuyerService')
 const BuyerRepositoryMock = require('./BuyerRepositoryMock')
 const BuyerModelMock = require('./BuyerModelMock')
+const MissingParams = require('../../src/error/MissingParams')
+
 
 
 const sut = () => {
@@ -84,6 +86,6 @@ describe('BuyerService', () => {
   it('Should be throw an erro if name is not provided', () => {
     const { buyerService } = sut()
     const promise = buyerService.save({})
-    expect(promise).rejects.toThrow()
+    expect(promise).rejects.toBeInstanceOf(MissingParams)
   })
 })

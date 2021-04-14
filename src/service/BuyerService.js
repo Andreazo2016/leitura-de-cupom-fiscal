@@ -1,3 +1,4 @@
+const MissingParams = require('../error/MissingParams')
 class BuyerService {
 
   _buyerRepository
@@ -6,7 +7,7 @@ class BuyerService {
   }
 
   async save({ name }) {
-    if (!name) throw new Error('Missing param')
+    if (!name) throw new MissingParams('Missing name param')
     const buyer = await this._buyerRepository.save({ name })
     return buyer
   }

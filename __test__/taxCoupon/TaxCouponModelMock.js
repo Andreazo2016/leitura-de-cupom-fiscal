@@ -5,7 +5,7 @@ class TaxCouponModelMock {
       name: 'tax-coupon-name',
       url: 'http://some-url.com',
       isProcessed: false,
-      date: new Date()
+      date: new Date(Date.now)
     }
   }
 }

@@ -1,6 +1,7 @@
-const TaxCouponService = require('../src/service/TaxCouponService')
+const TaxCouponService = require('../../src/service/TaxCouponService')
 const TaxCouponRepositoryMock = require('./TaxCouponRepositoryMock')
 const TaxCouponModelMock = require('./TaxCouponModelMock')
+const MissingParams = require('../../src/error/MissingParams')
 
 
 const sut = () => {
@@ -61,7 +62,7 @@ describe('TaxService', () => {
 
     const name = 'tax-coupon-name'
     const url = '/some-url'
-    const date = new Date()
+    const date = new Date(Date.now())
 
     await taxCouponRepositoryMock.save({ name, url, date })
 
@@ -97,8 +98,7 @@ describe('TaxService', () => {
 
     const promise = taxCouponService.save({ url })
 
-    expect(promise).rejects.toThrow()
-
+    expect(promise).rejects.toBeInstanceOf(MissingParams)
   })
 
   it('Should be able to return an erro if the url was not provided', () => {
@@ -109,7 +109,7 @@ describe('TaxService', () => {
 
     const promise = taxCouponService.save({ name })
 
-    expect(promise).rejects.toThrow()
+    expect(promise).rejects.toBeInstanceOf(MissingParams)
 
   })
 

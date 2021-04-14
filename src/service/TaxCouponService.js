@@ -1,3 +1,5 @@
+const MissingParams = require('../error/MissingParams')
+
 class TaxCouponService {
 
   _taxCouponRepository
@@ -7,12 +9,12 @@ class TaxCouponService {
 
   async save({ name, url }) {
 
-    if (!name || !url) throw new Error('Missing params')
+    if (!name || !url) throw new MissingParams('Missing params')
 
     const taxCoupon = await this._taxCouponRepository.save({
       name,
       url,
-      date: new Date()
+      date: new Date(Date.now)
     })
     return taxCoupon
   }
