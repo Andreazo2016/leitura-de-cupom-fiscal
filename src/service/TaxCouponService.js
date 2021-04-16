@@ -7,15 +7,16 @@ class TaxCouponService {
     this._taxCouponRepository = taxCouponRepository
   }
 
-  async save({ name, url }) {
+  async save({ name, path }) {
 
-    if (!name || !url) throw new MissingParams('Missing params')
+    if (!name || !path) throw new MissingParams('Missing params')
 
     const taxCoupon = await this._taxCouponRepository.save({
       name,
-      url,
-      date: new Date(Date.now)
+      path,
+      date: new Date(Date.now())
     })
+
     return taxCoupon
   }
 }

@@ -1,11 +1,11 @@
-import Sequelize, { Model } from 'sequelize'
+const Sequelize = require('sequelize')
 
-class TaxCoupons extends Model {
+class TaxCoupons extends Sequelize.Model {
 
   static init(sequelize) {
     super.init({
       name: Sequelize.STRING,
-      url: Sequelize.STRING,
+      path: Sequelize.STRING,
       date: Sequelize.DATE,
     }, {
       sequelize
@@ -14,4 +14,4 @@ class TaxCoupons extends Model {
 
 }
 
-export default TaxCoupons
+module.exports = TaxCoupons

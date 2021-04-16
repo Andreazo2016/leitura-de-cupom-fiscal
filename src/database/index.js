@@ -1,19 +1,18 @@
-import Sequelize from 'sequelize'
-import Buyer from './models/Buyer'
-import Product from './models/Product'
-import Shopping from './models/Shopping'
-import TaxCoupons from './models/TaxCoupons'
+const Sequelize = require('sequelize')
+const Buyer = require('./models/Buyer')
+const Product = require('./models/Product')
+const Shopping = require('./models/Shopping')
+const TaxCoupons = require('./models/TaxCoupons')
 
-import databaseConfig from '../config/database'
 
 const models = [Buyer, Product, Shopping, TaxCoupons]
 
 class Database {
-  constructor() {
-    this.init();
+  constructor(databaseConfig) {
+    this.init(databaseConfig);
   }
 
-  init() {
+  init(databaseConfig) {
     this.connection = new Sequelize(databaseConfig);
 
     models
@@ -21,4 +20,4 @@ class Database {
   }
 }
 
-export default new Database();
+module.exports = Database;

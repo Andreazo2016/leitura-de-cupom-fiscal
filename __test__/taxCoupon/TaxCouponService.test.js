@@ -4,7 +4,7 @@ const TaxCouponModelMock = require('./TaxCouponModelMock')
 const MissingParams = require('../../src/error/MissingParams')
 
 
-const sut = () => {
+const makeSut = () => {
 
   const taxCouponModelMock = new TaxCouponModelMock()
 
@@ -21,54 +21,41 @@ const sut = () => {
 
 describe('TaxService', () => {
 
-  it('Should be able to call save method from  model', async () => {
+  it('Should be able to call save method in repository', async () => {
 
-    const { taxCouponRepositoryMock, taxCouponModelMock } = sut()
+    const { taxCouponService, taxCouponRepositoryMock } = makeSut()
 
-
-    const saveMethod = jest.spyOn(taxCouponModelMock, 'create')
-
-    const name = 'tax-coupon-name'
-    const url = '/some-url'
-    const date = new Date()
-
-    await taxCouponRepositoryMock.save({ name, url, date })
-
-    expect(saveMethod).toHaveBeenCalled()
-
-  })
-
-  it('Should be able to call save method from repository', async () => {
-
-    const { taxCouponModelMock, taxCouponRepositoryMock } = sut()
-
-    const saveMethod = jest.spyOn(taxCouponModelMock, 'create')
+    const saveMethod = jest.spyOn(taxCouponRepositoryMock, 'save')
 
     const name = 'tax-coupon-name'
-    const url = '/some-url'
-    const date = new Date()
+    const path = '/some-path'
 
-    await taxCouponRepositoryMock.save({ name, url, date })
+    await taxCouponService.save({ name, path })
 
     expect(saveMethod).toHaveBeenCalled()
   })
 
 
-  it('Should be able to call save method from repository with correct params', async () => {
+  it('Should be able to call save method in repository with correct params', async () => {
 
-    const { taxCouponModelMock, taxCouponRepositoryMock } = sut()
+    const { taxCouponService, taxCouponRepositoryMock } = makeSut()
 
-    const saveMethod = jest.spyOn(taxCouponModelMock, 'create')
+    const saveMethod = jest.spyOn(taxCouponRepositoryMock, 'save')
+
+    jest.spyOn(Date, 'now').mockImplementationOnce(() => {
+      return new Date(2021, 3, 16).getTime()
+    })
 
     const name = 'tax-coupon-name'
-    const url = '/some-url'
-    const date = new Date(Date.now())
+    const path = '/some-path'
+    const date = new Date(2021, 3, 16)
 
-    await taxCouponRepositoryMock.save({ name, url, date })
+
+    await taxCouponService.save({ name, path })
 
     expect(saveMethod).toHaveBeenCalledWith({
       name,
-      url,
+      path,
       date
     })
 
@@ -76,12 +63,12 @@ describe('TaxService', () => {
 
   it('Should be able to create a new TaxCoupon', async () => {
 
-    const { taxCouponService } = sut()
+    const { taxCouponService } = makeSut()
 
     const name = 'tax-coupon-name'
-    const url = '/some-url'
+    const path = '/some-path'
 
-    const response = await taxCouponService.save({ name, url })
+    const response = await taxCouponService.save({ name, path })
 
     expect(response.id).toBeTruthy()
     expect(response.name).toBe(name)
@@ -92,24 +79,41 @@ describe('TaxService', () => {
 
   it('Should be able to return an erro if the name was not provided', () => {
 
-    const { taxCouponService } = sut()
+    const { taxCouponService } = makeSut()
 
-    const url = '/some-url'
+    const path = '/some-path'
 
-    const promise = taxCouponService.save({ url })
+    const promise = taxCouponService.save({ path })
 
     expect(promise).rejects.toBeInstanceOf(MissingParams)
   })
 
-  it('Should be able to return an erro if the url was not provided', () => {
+  it('Should be able to return an erro if the path was not provided', () => {
 
-    const { taxCouponService } = sut()
+    const { taxCouponService } = makeSut()
 
     const name = 'tax-coupon-name'
 
     const promise = taxCouponService.save({ name })
 
     expect(promise).rejects.toBeInstanceOf(MissingParams)
+
+  })
+
+  it('Should be able to throw if the path is duplicated', async () => {
+
+    const { taxCouponService } = makeSut()
+
+
+    const name = 'tax-coupon-name'
+    const other_name = 'other-tax-coupon-name'
+    const path = '/some-path'
+
+    await taxCouponService.save({ name, path })
+
+    const promise = taxCouponService.save({ name: other_name, path })
+
+    expect(promise).rejects.toThrow()
 
   })
 

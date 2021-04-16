@@ -4,8 +4,8 @@ class TaxCouponRepositoryMock {
     this._taxCouponModel = taxCouponModel
   }
 
-  async save({ name, url, date }) {
-    const taxCouponCreated = await this._taxCouponModel.create({ name, url, date })
+  async save({ name, path, date }) {
+    const taxCouponCreated = await this._taxCouponModel.create({ name, path, date })
     return taxCouponCreated
   }
 }
