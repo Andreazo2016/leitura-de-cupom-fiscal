@@ -10,4 +10,4 @@ class TaxCouponRepository {
   }
 }
 
-module.exports = TaxCouponRepository
+export default TaxCouponRepository

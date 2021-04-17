@@ -6,4 +6,4 @@ class BaseAppError extends Error {
   }
 }
 
-module.exports = BaseAppError
+export default BaseAppError

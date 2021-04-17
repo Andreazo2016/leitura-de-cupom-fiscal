@@ -1,6 +1,6 @@
-const TaxCouponRepository = require('../repository/TaxCouponRepository')
-const TaxCouponService = require('../service/TaxCouponService')
-const TaxCoupons = require('../database/models/TaxCoupons')
+import TaxCouponRepository from '../repository/TaxCouponRepository'
+import TaxCouponService from '../service/TaxCouponService'
+import TaxCoupons from '../database/models/TaxCoupons'
 
 class TaxCouponServiceFactory {
 
@@ -11,4 +11,4 @@ class TaxCouponServiceFactory {
   }
 }
 
-module.exports = TaxCouponServiceFactory
+export default TaxCouponServiceFactory

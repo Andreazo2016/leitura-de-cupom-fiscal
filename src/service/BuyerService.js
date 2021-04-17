@@ -1,4 +1,4 @@
-const MissingParams = require('../error/MissingParams')
+import MissingParams from '../error/MissingParams'
 class BuyerService {
 
   _buyerRepository
@@ -13,4 +13,4 @@ class BuyerService {
   }
 }
 
-module.exports = BuyerService
+export default BuyerService

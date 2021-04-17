@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+import Sequelize from 'sequelize'
 
 class TaxCoupons extends Sequelize.Model {
 
@@ -14,4 +14,4 @@ class TaxCoupons extends Sequelize.Model {
 
 }
 
-module.exports = TaxCoupons
+export default TaxCoupons

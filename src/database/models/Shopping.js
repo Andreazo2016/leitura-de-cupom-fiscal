@@ -1,4 +1,4 @@
-const Sequelize = require('sequelize')
+import Sequelize from 'sequelize'
 
 class Shopping extends Sequelize.Model {
 
@@ -14,4 +14,4 @@ class Shopping extends Sequelize.Model {
 
 }
 
-module.exports = Shopping
+export default Shopping

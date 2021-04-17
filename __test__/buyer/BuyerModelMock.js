@@ -7,4 +7,4 @@ class BuyerModelMock {
   }
 }
 
-module.exports = BuyerModelMock
+export default BuyerModelMock

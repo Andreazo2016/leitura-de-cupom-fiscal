@@ -10,4 +10,4 @@ class BuyerRepostory {
   }
 }
 
-module.exports = BuyerRepostory
+export default BuyerRepostory

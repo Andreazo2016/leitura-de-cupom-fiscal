@@ -10,4 +10,4 @@ class BuyerRepositoryMock {
   }
 }
 
-module.exports = BuyerRepositoryMock
+export default BuyerRepositoryMock

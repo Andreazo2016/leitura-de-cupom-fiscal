@@ -1,7 +1,7 @@
-const BuyerService = require('../../src/service/BuyerService')
-const BuyerRepositoryMock = require('./BuyerRepositoryMock')
-const BuyerModelMock = require('./BuyerModelMock')
-const MissingParams = require('../../src/error/MissingParams')
+import BuyerService from '../../src/service/BuyerService'
+import BuyerRepositoryMock from './BuyerRepositoryMock'
+import BuyerModelMock from './BuyerModelMock'
+import MissingParams from '../../src/error/MissingParams'
 
 
 

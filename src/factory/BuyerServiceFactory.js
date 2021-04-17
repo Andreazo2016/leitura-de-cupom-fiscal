@@ -1,6 +1,6 @@
-const BuyerRepostory = require('../repository/BuyerRepository')
-const BuyerService = require('../service/BuyerService')
-const Buyer = require('../database/models/Buyer')
+import BuyerRepostory from '../repository/BuyerRepository'
+import BuyerService from '../service/BuyerService'
+import Buyer from '../database/models/Buyer'
 
 class BuyerServiceFactory {
 
@@ -12,4 +12,4 @@ class BuyerServiceFactory {
   }
 }
 
-module.exports = BuyerServiceFactory
+export default BuyerServiceFactory

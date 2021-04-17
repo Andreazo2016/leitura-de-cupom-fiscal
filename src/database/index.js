@@ -1,8 +1,8 @@
-const Sequelize = require('sequelize')
-const Buyer = require('./models/Buyer')
-const Product = require('./models/Product')
-const Shopping = require('./models/Shopping')
-const TaxCoupons = require('./models/TaxCoupons')
+import Sequelize from 'sequelize'
+import Buyer from './models/Buyer'
+import Product from './models/Product'
+import Shopping from './models/Shopping'
+import TaxCoupons from './models/TaxCoupons'
 
 
 const models = [Buyer, Product, Shopping, TaxCoupons]
@@ -20,4 +20,4 @@ class Database {
   }
 }
 
-module.exports = Database;
+export default Database;

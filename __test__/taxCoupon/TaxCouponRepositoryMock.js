@@ -10,4 +10,4 @@ class TaxCouponRepositoryMock {
   }
 }
 
-module.exports = TaxCouponRepositoryMock
+export default TaxCouponRepositoryMock

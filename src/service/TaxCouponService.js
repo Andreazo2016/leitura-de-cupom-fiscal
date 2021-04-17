@@ -1,4 +1,4 @@
-const MissingParams = require('../error/MissingParams')
+import MissingParams from '../error/MissingParams'
 
 class TaxCouponService {
 
@@ -21,4 +21,4 @@ class TaxCouponService {
   }
 }
 
-module.exports = TaxCouponService
+export default TaxCouponService

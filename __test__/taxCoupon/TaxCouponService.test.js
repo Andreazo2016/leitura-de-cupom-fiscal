@@ -1,7 +1,7 @@
-const TaxCouponService = require('../../src/service/TaxCouponService')
-const TaxCouponRepositoryMock = require('./TaxCouponRepositoryMock')
-const TaxCouponModelMock = require('./TaxCouponModelMock')
-const MissingParams = require('../../src/error/MissingParams')
+import TaxCouponService from '../../src/service/TaxCouponService'
+import TaxCouponRepositoryMock from './TaxCouponRepositoryMock'
+import TaxCouponModelMock from './TaxCouponModelMock'
+import MissingParams from '../../src/error/MissingParams'
 
 
 const makeSut = () => {
